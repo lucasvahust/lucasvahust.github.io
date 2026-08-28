@@ -3,31 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hung Nguyen</title>
+  <meta name="description" content="Hung Nguyen is an AI Engineer working at the intersection of applied mathematics and scientific research.">
+  <title>Hung Nguyen | AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #182321;
+      --muted: #61716e;
+      --paper: #f4f6f1;
+      --surface: #ffffff;
+      --line: #dce4df;
+      --accent: #e4633f;
+      --accent-dark: #b84225;
+      --lime: #d8ed7a;
+      --shadow: 0 18px 45px rgba(24, 35, 33, .08);
+    }
+
+    [data-theme="dark"] {
+      --ink: #edf4ef;
+      --muted: #a8b7b0;
+      --paper: #111816;
+      --surface: #18221f;
+      --line: #2d3b36;
+      --accent: #f07a55;
+      --accent-dark: #ff9d80;
+      --lime: #d8ed7a;
+      --shadow: 0 18px 45px rgba(0, 0, 0, .2);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.6;
+      transition: background .3s ease, color .3s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .mono { font: 500 .73rem "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+
+    header {
+      position: fixed; z-index: 10; top: 0; width: 100%;
+      background: color-mix(in srgb, var(--paper) 86%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
+      backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { font-weight: 800; letter-spacing: -.05em; font-size: 1.1rem; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 26px; align-items: center; color: var(--muted); font-size: .82rem; font-weight: 700; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .icon-button, .menu-button { border: 1px solid var(--line); color: var(--ink); background: var(--surface); width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 1rem; }
+    .menu-button { display: none; }
+
+    main { overflow: hidden; }
+    .hero { min-height: 720px; padding: 160px 0 100px; position: relative; display: grid; align-items: center; }
+    .hero::before { content: ""; position: absolute; width: 420px; height: 420px; right: -120px; top: 90px; background: var(--lime); opacity: .5; border-radius: 50%; filter: blur(1px); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; position: relative; }
+    .eyebrow { color: var(--accent-dark); margin: 0 0 22px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 700px; margin-bottom: 25px; font-size: clamp(3.6rem, 8vw, 7.4rem); line-height: .92; letter-spacing: -.09em; }
+    .hero-copy { max-width: 560px; color: var(--muted); font-size: 1.08rem; }
+    .hero-copy strong { color: var(--ink); }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; gap: 9px; align-items: center; border: 1px solid var(--ink); padding: 12px 18px; border-radius: 4px; font-size: .82rem; font-weight: 800; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-3px); background: var(--ink); color: var(--paper); }
+    .button.primary { color: #fff; border-color: var(--accent); background: var(--accent); }
+    .button.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+    .hero-mark { width: min(100%, 380px); aspect-ratio: 1; margin-left: auto; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); padding: 30px; transform: rotate(3deg); }
+    .mark-inner { height: 100%; border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--lime) 35%, var(--surface))); }
+    .mark-symbol { font-size: 8rem; line-height: .8; letter-spacing: -.15em; font-weight: 800; color: var(--accent); }
+    .mark-caption { display: flex; justify-content: space-between; color: var(--muted); }
+
+    section { padding: 110px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-bottom: 58px; }
+    .section-heading h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -.07em; margin-bottom: 0; }
+    .section-heading p { color: var(--muted); max-width: 530px; margin-bottom: 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .about-grid p { font-size: 1.16rem; max-width: 560px; }
+    .about-grid p + p { color: var(--muted); font-size: .98rem; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); height: max-content; }
+    .fact { background: var(--surface); padding: 24px; }
+    .fact strong { display: block; font-size: 1.45rem; letter-spacing: -.05em; }
+    .fact span { color: var(--muted); font-size: .78rem; }
+
+    .timeline { border-top: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 180px 1fr 120px; gap: 30px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+    .role h3 { margin-bottom: 5px; font-size: 1.3rem; letter-spacing: -.04em; }
+    .role p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .role .period { color: var(--muted); }
+    .role .type { text-align: right; color: var(--accent-dark); }
+
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { background: var(--surface); border: 1px solid var(--line); padding: 28px; min-height: 280px; display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+    .project:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .project:nth-child(2) { background: var(--ink); color: var(--paper); }
+    .project:nth-child(3) { background: var(--lime); color: var(--ink); }
+    .project-number { color: var(--accent); }
+    .project h3 { font-size: 1.7rem; letter-spacing: -.06em; margin: 40px 0 10px; }
+    .project p { color: var(--muted); font-size: .9rem; max-width: 450px; }
+    .project:nth-child(2) p { color: #a8b7b0; }
+    .tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { border: 1px solid currentColor; border-radius: 99px; padding: 4px 9px; font: .68rem "DM Mono", monospace; }
+
+    .research-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .research-item { padding: 24px 0; border-top: 1px solid var(--line); }
+    .research-item h3 { margin: 14px 0 8px; font-size: 1.1rem; letter-spacing: -.03em; }
+    .research-item p { color: var(--muted); font-size: .87rem; margin-bottom: 0; }
+    .research-item .mono { color: var(--accent-dark); }
+    .skill-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .skill-group { padding-top: 18px; border-top: 2px solid var(--accent); }
+    .skill-group h3 { font-size: .9rem; margin-bottom: 14px; }
+    .skill-group p { color: var(--muted); font-size: .85rem; }
+    .contact { background: var(--ink); color: var(--paper); border: 0; }
+    .contact .section-heading p { color: #a8b7b0; }
+    .contact .button { border-color: var(--paper); }
+    .contact .button:hover { background: var(--paper); color: var(--ink); }
+    footer { padding: 28px 0; color: var(--muted); font-size: .75rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 32px, 600px); }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 18px 16px 24px; flex-direction: column; align-items: flex-start; background: var(--paper); border-bottom: 1px solid var(--line); }
+      .nav-links.open { display: flex; }
+      .menu-button { display: grid; }
+      .hero { min-height: auto; padding: 130px 0 85px; }
+      .hero-grid, .about-grid, .section-heading { grid-template-columns: 1fr; gap: 34px; }
+      .hero-mark { margin: 0 auto; width: min(100%, 320px); }
+      .section-heading { margin-bottom: 36px; }
+      section { padding: 75px 0; }
+      .role { grid-template-columns: 1fr 90px; gap: 4px 15px; }
+      .role .period { grid-column: 1; }
+      .role .type { grid-column: 2; grid-row: 1; }
+      .role p:not(.period) { grid-column: 1 / -1; margin-top: 12px; }
+      .project-grid, .research-list { grid-template-columns: 1fr; }
+      .skill-list { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
 </head>
-
 <body>
-  <h1>Hung Nguyen</h1>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">H<span>.</span> N<span>.</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><button class="icon-button" id="theme-toggle" aria-label="Toggle color theme">◐</button><button class="menu-button" id="menu-toggle" aria-label="Toggle navigation">☰</button></div>
+    </div>
+  </header>
 
-  <p>
-    AI Engineer | Applied Mathematics | LLMs, RAG,
-    Scientific AI & Machine Learning
-  </p>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow mono">Available for thoughtful problems</p>
+          <h1>Hung<br><span style="color:var(--accent)">Nguyen.</span></h1>
+          <p class="hero-copy"><strong>AI Engineer | Applied Mathematics</strong><br>I build intelligent systems that turn complex data and rigorous research into useful, reliable tools.</p>
+          <div class="buttons"><a class="button primary" href="#projects">Explore my work <span>↘</span></a><a class="button" href="mailto:your-email@example.com">Get in touch <span>↗</span></a></div>
+        </div>
+        <div class="hero-mark reveal" aria-label="Abstract mathematical identity mark">
+          <div class="mark-inner"><span class="mono">AI / MATH / RESEARCH</span><span class="mark-symbol">∫<br>∑</span><div class="mark-caption mono"><span>H.N.</span><span>01—26</span></div></div>
+        </div>
+      </div>
+    </section>
 
-  <h2>About Me</h2>
-  <p>
-    I work at the intersection of applied mathematics,
-    artificial intelligence, and scientific research.
-  </p>
+    <section id="about"><div class="container">
+      <div class="section-heading reveal"><h2>Building with<br>precision.</h2><p>My work lives where mathematical thinking meets practical machine intelligence. I care about systems that are not only capable, but interpretable, robust, and worth trusting.</p></div>
+      <div class="about-grid reveal"><div><p>I am an AI Engineer with an Applied Mathematics background, focused on large language models, retrieval systems, and scientific machine learning.</p><p>Whether I am designing an agent for literature synthesis or modeling a complex physical process, I bring a research mindset to every engineering decision.</p></div><div class="facts"><div class="fact"><strong>01</strong><span>Research mindset</span></div><div class="fact"><strong>02</strong><span>Systems thinking</span></div><div class="fact"><strong>03</strong><span>Clear communication</span></div><div class="fact"><strong>04</strong><span>Curious by default</span></div></div></div>
+    </div></section>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Scientific Literature Review Agent</li>
-    <li>Machine Learning Projects</li>
-    <li>Applied Mathematics Research</li>
-  </ul>
+    <section id="experience"><div class="container"><div class="section-heading reveal"><h2>Selected<br>experience.</h2><p>A short record of roles and environments where I have turned ambiguous questions into working systems.</p></div><div class="timeline reveal">
+      <article class="role"><span class="period mono">2024 — now</span><div><h3>AI Engineer</h3><p>Designing LLM-powered workflows, evaluation frameworks, and retrieval architectures for real-world use.</p></div><span class="type mono">Industry</span></article>
+      <article class="role"><span class="period mono">2022 — 24</span><div><h3>ML Researcher</h3><p>Exploring scientific machine learning, representation learning, and reproducible computational experiments.</p></div><span class="type mono">Research</span></article>
+      <article class="role"><span class="period mono">2020 — 22</span><div><h3>Applied Mathematics</h3><p>Developing a foundation in optimization, statistics, numerical methods, and mathematical modeling.</p></div><span class="type mono">Academic</span></article>
+    </div></div></section>
 
-  <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
+    <section id="research"><div class="container"><div class="section-heading reveal"><h2>Research &<br>publications.</h2><p>Questions I return to: how do we make models reason better, communicate uncertainty, and accelerate discovery?</p></div><div class="research-list reveal">
+      <article class="research-item"><span class="mono">01 / Working paper</span><h3>Reliable Retrieval for Scientific Discovery</h3><p>Methods for grounding language models in high-signal literature and measuring evidence quality.</p></article>
+      <article class="research-item"><span class="mono">02 / In progress</span><h3>Structure-Preserving Scientific Models</h3><p>Exploring inductive biases that help neural systems respect the mathematics of physical phenomena.</p></article>
+      <article class="research-item"><span class="mono">03 / Interest</span><h3>Evaluation Beyond the Benchmark</h3><p>Building practical ways to evaluate usefulness, calibration, and failure modes in AI agents.</p></article>
+      <article class="research-item"><span class="mono">04 / Reading list</span><h3>Optimization & Representation</h3><p>A growing collection of ideas at the intersection of optimization theory and modern deep learning.</p></article>
+    </div></div></section>
+
+    <section id="projects"><div class="container"><div class="section-heading reveal"><h2>Featured<br>projects.</h2><p>Small, focused experiments and larger systems that reflect how I like to work: from first principles to a useful interface.</p></div><div class="project-grid reveal">
+      <article class="project"><span class="project-number mono">01 / Agent systems</span><h3>Scientific Literature Review Agent</h3><p>A research companion that retrieves, compares, and synthesizes technical papers with traceable evidence.</p><div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">LLMs</span></div></article>
+      <article class="project"><span class="project-number mono">02 / Machine learning</span><h3>Modeling Complex Systems</h3><p>Experiments in learning useful representations of dynamical systems from sparse and noisy observations.</p><div class="tags"><span class="tag">PyTorch</span><span class="tag">SciML</span><span class="tag">JAX</span></div></article>
+      <article class="project"><span class="project-number mono">03 / Open exploration</span><h3>Mathematics in Practice</h3><p>Notebooks and visual explanations that make optimization, probability, and algorithms feel tangible.</p><div class="tags"><span class="tag">Research</span><span class="tag">Numerics</span></div></article>
+      <article class="project"><span class="project-number mono">04 / Coming soon</span><h3>More on the horizon</h3><p>I am always looking for an interesting question that sits just beyond the edge of what I know.</p><div class="tags"><span class="tag">Curiosity</span><span class="tag">Collaboration</span></div></article>
+    </div></div></section>
+
+    <section id="skills"><div class="container"><div class="section-heading reveal"><h2>Tools of<br>the trade.</h2><p>A practical toolkit shaped by research, production constraints, and a preference for understanding the full stack.</p></div><div class="skill-list reveal"><div class="skill-group"><h3>AI & ML</h3><p>LLMs<br>RAG systems<br>Model evaluation<br>Deep learning</p></div><div class="skill-group"><h3>Mathematics</h3><p>Optimization<br>Statistics<br>Numerical methods<br>Mathematical modeling</p></div><div class="skill-group"><h3>Engineering</h3><p>Python<br>APIs & data pipelines<br>Cloud systems<br>Experimentation</p></div><div class="skill-group"><h3>Ways of working</h3><p>Technical writing<br>Research synthesis<br>Rapid prototyping<br>Collaboration</p></div></div></div></section>
+
+    <section id="contact" class="contact"><div class="container"><div class="section-heading reveal"><h2>Let’s make<br>something useful.</h2><p>Have a difficult problem, a research idea, or simply a good question? I would like to hear about it.</p></div><div class="buttons reveal"><a class="button primary" href="mailto:your-email@example.com">Email me <span>↗</span></a><a class="button" href="https://github.com/lucasvahust" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a class="button" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a class="button" href="cv.pdf" target="_blank">View CV <span>↗</span></a></div></div></section>
+  </main>
+  <footer><div class="container footer-inner"><span>© 2026 Hung Nguyen</span><span class="mono">Made with curiosity · Ho Chi Minh City</span></div></footer>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.querySelector('#theme-toggle');
+    const menuToggle = document.querySelector('#menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) root.dataset.theme = savedTheme;
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = nextTheme;
+      localStorage.setItem('theme', nextTheme);
+    });
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+  </script>
 </body>
 </html>
