@@ -1,0 +1,226 @@
+%----------------------------------------------------------------------------------------
+%  Academic Curriculum Vitae – Nguyen Van Hung
+%  Using resume.cls (Medium Length Professional CV template)
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+a4paper,
+12pt,
+]{resume}
+
+\usepackage[lining]{ebgaramond}
+
+
+% NVH bổ sung
+%\usepackage{hyperref}
+\usepackage{xcolor}
+
+\definecolor{cvblue}{RGB}{31, 78, 121}
+
+\usepackage[
+colorlinks=true,
+urlcolor=cvblue,
+linkcolor=cvblue,
+citecolor=cvblue
+]{hyperref}
+%----------------------------------------------------------------------------------------
+
+\name{Nguyen Van Hung}
+
+\address{Faculty of Mathematics and Informatics, Hanoi University of Science and Technology (HUST)}
+
+\address{\href{mailto: hungalberto2805@gmail.com}{hungalberto2805@gmail.com} \\ \href{mailto: Hung.NV227121@sis.hust.edu.vn}{Hung.NV227121@sis.hust.edu.vn} \\ (+84)~368~700~645}
+
+\address{
+    \href{https://github.com/lucasvahust}{GitHub} \\
+    \href{https://www.linkedin.com/in/hưng-nguyễn-184166255/}{LinkedIn} \\
+    Hanoi, Vietnam
+}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+    
+    %----------------------------------------------------------------------------------------
+    %	RESEARCH INTERESTS
+    %----------------------------------------------------------------------------------------
+    
+    \begin{rSection}{Summary}
+
+        Applied Mathematics and Informatics student at Hanoi University of Science and
+        Technology with experience in mathematical optimization, scientific computing,
+        machine learning, and LLM/RAG systems. Experienced in developing algorithms
+        from theoretical analysis and convergence proofs to Python implementation and
+        real-world experimentation. Interested in mathematically grounded AI and
+        research-driven solutions to practical problems.
+
+    \end{rSection}
+    
+    %----------------------------------------------------------------------------------------
+    %	EDUCATION
+    %----------------------------------------------------------------------------------------
+    
+    \begin{rSection}{Education}
+        
+        \textbf{Hanoi University of Science and Technology (HUST)} 
+        \;|\; CPA: 3.55/4.00 \hfill {Oct 2022 -- Present} \\
+        \textit{Honors and awards:} \\
+        $\cdot$\ Excellence Scholarship, Type A --- Semester 2022.1 (\textit{Top 1 GPA, cohort-wide}) \\
+        $\cdot$\ Outstanding Student Award 2025 (\textit{Sinh vien 5 tot}), HUST \\
+        $\cdot$\ Certificate of Merit, Faculty of Mathematics and Informatics (2022--2023, 2023--2024) \\
+        $\cdot$\ Certificate of Merit from the President of HUST for academic achievement and \\
+        \hspace*{1em} contributions to student organizations (2023--2024) \\
+        $\cdot$\ First Prize, \textit{``Market Economy in Vietnam and the World''} Essay Competition, HUST
+        
+        \medskip
+        
+        \textbf{Vingroup Applied AI Talent Program -- VinUniversity} \;|\; Cohort 3 \hfill {Jul 2026 -- Present} \\
+        \textit{Participant} \\
+        $\cdot$\ Participating in an intensive applied AI training program focused on 
+        artificial intelligence foundations, practical AI development, and real-world 
+        problem solving. Receiving hands-on training through technical projects and practical 
+        business problems under the guidance of VinUniversity faculty and industry mentors.
+%        
+%        \medskip
+%        
+%        \textbf{Kinh Mon High School, Hai Duong} \hfill {Sep 2019 -- Jun 2022} \\
+%        $\cdot$\ Third Prize, Provincial Mathematics Olympiad (Grade 12)
+        
+    \end{rSection}
+    
+    %----------------------------------------------------------------------------------------
+    %	RESEARCH ACTIVITIES
+    %----------------------------------------------------------------------------------------
+    
+    \begin{rSection}{Research Activities}
+        
+        \begin{rSubsection}{Student Research Conference -- HUST}{May 2026}{Oral Presentation}{}
+            \item \textit{``A Self-Adaptive Inertial CQ Algorithm with Conjugate-Gradient Direction for Split Feasibility Problems: Applications to Sparse Recovery and Elastic Net''}. The results of this study have been published in \textit{Thang Long Journal of Science -- Mathematics and Mathematical Sciences}, Vol.~5, No.~1 (2026).
+            \href{https://science.thanglong.edu.vn/index.php/volc/article/view/344}{[Paper]}
+        \end{rSubsection}
+        
+    \end{rSection}
+    
+    %----------------------------------------------------------------------------------------
+    %	ACADEMIC PROJECTS
+    %----------------------------------------------------------------------------------------
+    
+    \begin{rSection}{Academic Projects}
+        \begin{rSubsection}
+            {\parbox[t]{0.82\textwidth}{
+                    An Accelerated Inertial Relaxed Algorithm with a Conjugate-Gradient \\Direction
+                    for Split Feasibility Problems:
+                    Applications to Sparse Recovery \\and Extreme Learning Machines
+            }}
+            {2025 -- 2026}
+            {Graduation Thesis -- Faculty of Mathematics and Informatics, HUST \;|\;
+                \href{https://github.com/lucasvahust/Graduation_Thesis_Nguyen_Van_Hung/blob/main/thesis/NguyenVanHung_Graduation_Thesis.pdf}{[PDF]}\;
+                \href{https://github.com/lucasvahust/Graduation_Thesis_Nguyen_Van_Hung/tree/main/experiments}{[Code]}}
+            {}
+
+        
+                \item Developed a self-adaptive inertial relaxed projection algorithm with a
+                conjugate-gradient-type correction direction for split feasibility problems;
+                established strong convergence to the minimum-norm solution and implemented
+                the method in Python.
+                
+                \item Evaluated the method on numerical benchmarks, high-dimensional sparse
+                signal recovery, and Extreme Learning Machine training for breast cancer
+                classification, demonstrating strong performance against recent algorithms.
+        \end{rSubsection}
+        
+        \begin{rSubsection}
+            {LitReview Agent -- AI-Powered Systematic Literature Review System}
+            {2026}
+            {Team Project -- Build Phase, VinUniversity}
+            {}
+            
+            \item Developed an AI-powered system to automate the systematic literature review
+            workflow based on PRISMA, PICO, including research-scope refinement, criteria generation,
+            academic search, paper verification, deduplication, and full-text RAG over scientific PDFs.
+            
+            \item Built the LLM/RAG pipeline using Python, FastAPI, LangGraph/LangChain,
+            PostgreSQL/pgvector and ChromaDB, integrating Google Scholar/OpenAlex for paper discovery
+            and supporting grounded document Q\&A and export to BibTeX/Excel.
+            
+        \end{rSubsection}
+        
+        \begin{rSubsection}{Improved Bregman Iteration for Sparse Portfolio Optimization}{2024 -- 2025}{Capstone Project II -- Faculty of Mathematics and Informatics, HUST}{}
+            \item Formulated a Markowitz mean-variance model with $\ell_1$ regularization
+    for sparse portfolio selection and developed an improved Bregman iterative
+    algorithm combined with FISTA.
+    
+            \item Established convergence properties, implemented the solver in Python,
+    and validated it on real market data, demonstrating improved sparsity,
+    stability, and risk control over classical benchmarks.
+        \end{rSubsection}
+        
+%        \begin{rSubsection}{Mean-Variance Portfolio Optimization (Markowitz Model)}{2023 -- 2024}{Capstone Project I -- Faculty of Mathematics and Informatics, HUST}{}
+%            \item Collected and preprocessed historical stock price data from the Hanoi Stock
+%            Exchange (HNX); formulated and solved the mean-variance optimization problem.
+%            \item Simulated the efficient frontier; evaluated portfolio performance via Sharpe ratio,
+%            expected return and volatility against a random baseline.
+%        \end{rSubsection}
+        
+        \begin{rSubsection}
+            {E-Commerce Data Warehouse and Business Intelligence for Brazilian Olist}
+            {2025 -- 2026}
+            {Course Project -- Data Warehouse and Business Intelligence, HUST}
+            {}
+            
+            \item Built an end-to-end data warehouse pipeline for the 9-table Brazilian Olist
+            e-commerce dataset ($\sim$126 MB) using Python and PostgreSQL, including data
+            exploration, cleaning, transformation, feature engineering, and an OLAP model with
+            5 dimension tables and 3 fact tables.
+            
+            \item Developed Power BI dashboards for revenue, orders, and customer reviews,
+            and extended the analysis with RFM, K-Means customer segmentation, and sales
+            forecasting using SARIMA, Prophet, and XGBoost.
+            
+        \end{rSubsection}
+        
+        \begin{rSubsection}{Temporal Kolmogorov--Arnold Transformer for Multivariate Time-Series Forecasting}{2024}{Course Project -- Time Series Analysis, HUST}{}
+            \item Investigated the mathematical foundations of Kolmogorov--Arnold Networks (KAN),
+            grounded in the Kolmogorov--Arnold representation theorem for multivariate functions.
+            \item Implemented TKAT, integrating KAN layers into a Temporal Fusion Transformer
+            (TFT) architecture; benchmarked on multiple forecasting datasets.
+        \end{rSubsection}
+        
+    \end{rSection}
+    
+    %----------------------------------------------------------------------------------------
+    %	ACADEMIC INVOLVEMENT
+    %----------------------------------------------------------------------------------------
+    
+    \begin{rSection}{Academic Involvement}
+        \begin{rSubsection}{Volunteer Team, Faculty of Mathematics and Informatics -- HUST}{Nov 2023 -- Nov 2024}{Captain}{}
+            \item Led planning and execution of large-scale volunteer campaigns
+            (\textit{Green Summer}, \textit{Warm Winter}).
+            \item Designed and delivered educational activities for children in remote
+            mountainous regions.
+        \end{rSubsection}
+        
+        \begin{rSubsection}{Applied Mathematics \& Informatics Club (AMIC) --- HUST}{Oct 2023 -- Present}{Member, Academic Committee}{}
+            \item Co-organized seminars, workshops, and competitions in applied mathematics
+            and mathematical modeling.
+        \end{rSubsection}
+        
+    \end{rSection}
+    
+    %----------------------------------------------------------------------------------------
+    %	TECHNICAL SKILLS
+    %----------------------------------------------------------------------------------------
+    
+    \begin{rSection}{Technical Skills}
+        
+        \begin{tabular}{@{} >{\bfseries}l @{\hspace{4ex}} l @{}}
+            Programming       & Python (NumPy, SciPy, Pandas, PyTorch, Matplotlib), SQL, Git/GitHub \\
+            Modeling & Machine learning, deep learning, time-series modeling, LLM/RAG, scientific computing \\
+            Mathematical      & Optimization, numerical methods, iterative algorithms \\
+            Languages         & Vietnamese (native),\ \ English (IELTS 6.0, TOEIC 805)
+        \end{tabular}
+        
+    \end{rSection}
+    
+    %----------------------------------------------------------------------------------------
+    
+\end{document}
