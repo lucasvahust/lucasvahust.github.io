@@ -78,21 +78,8 @@
     .button.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
     .hero-mark { width: min(100%, 380px); aspect-ratio: 1; margin-left: auto; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); padding: 30px; transform: rotate(3deg); }
     .mark-inner { height: 100%; border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--lime) 35%, var(--surface))); }
-    .mark-top, .mark-caption { display: flex; justify-content: space-between; color: var(--muted); }
-    .mark-top .mono { color: var(--ink); }
-    .mark-visual { position: relative; flex: 1; min-height: 220px; margin: 10px 0 8px; overflow: hidden; }
-    .mark-visual::before, .mark-visual::after { content: ""; position: absolute; border: 1px solid color-mix(in srgb, var(--accent) 68%, transparent); border-radius: 50%; transform: rotate(-28deg); }
-    .mark-visual::before { width: 78%; height: 34%; left: 11%; top: 35%; }
-    .mark-visual::after { width: 47%; height: 84%; left: 27%; top: 9%; transform: rotate(42deg); border-color: color-mix(in srgb, var(--ink) 28%, transparent); }
-    .mark-grid { position: absolute; inset: 10% 0; opacity: .45; background-image: linear-gradient(color-mix(in srgb, var(--line) 75%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 75%, transparent) 1px, transparent 1px); background-size: 24px 24px; mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent); }
-    .mark-core { position: absolute; left: 50%; top: 50%; width: 68px; height: 68px; transform: translate(-50%, -50%); border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 2rem; font-weight: 700; box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 16%, transparent); }
-    .mark-node { position: absolute; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--ink); border-radius: 50%; background: var(--surface); font: 500 .66rem "DM Mono", monospace; color: var(--ink); }
-    .mark-node.ai { top: 12%; left: 10%; }
-    .mark-node.math { right: 7%; top: 38%; color: var(--accent-dark); border-color: var(--accent); }
-    .mark-node.research { bottom: 8%; left: 23%; }
-    .mark-formula { position: absolute; color: var(--accent); font: 500 1.45rem "DM Mono", monospace; }
-    .formula-one { right: 17%; top: 11%; }
-    .formula-two { left: 6%; bottom: 13%; font-size: 1.1rem; color: var(--muted); }
+    .mark-symbol { display: flex; flex-direction: column; gap: 18px; font-size: 7.5rem; line-height: .72; letter-spacing: -.15em; font-weight: 800; color: var(--accent); }
+    .mark-caption { display: flex; justify-content: space-between; color: var(--muted); }
 
     section { padding: 110px 0; border-top: 1px solid var(--line); }
     .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-bottom: 58px; }
